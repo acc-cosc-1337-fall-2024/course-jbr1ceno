@@ -8,5 +8,8 @@ Function echo_variable returns the incoming parameter
 */
 int echo_variable(int num)
 {
-    return num;
+    //Create an int(whole number variable)
+    int return_value = num + 1;
+
+    return return_value;
 }
