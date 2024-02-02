@@ -14,3 +14,8 @@ TEST_CASE("Test implicit data type casting double to int", "verify double to int
 	
 	REQUIRE(convert_double_to_int(10.99) == 10);
 }
+
+TEST_CASE("Test explicit data type casting", "verify double to int conversion") {
+	
+	REQUIRE(static_cast_double_int(10.99) == 10);
+}

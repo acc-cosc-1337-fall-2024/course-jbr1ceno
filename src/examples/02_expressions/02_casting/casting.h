@@ -13,3 +13,4 @@ int convert_double_to_int(double num);
 /*
 Write int value-return function static_cast_double_int with a double parameter
 */
+int static_cast_double_int(double num);

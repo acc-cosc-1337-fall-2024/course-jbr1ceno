@@ -11,6 +11,7 @@ double convert_to_double(int years, double rate)
     auto result = years * rate; //implicit casting
     return result;
 }
+
 /*
 Function convert_double_to_int with a double parameter returns the 
 double parameter
@@ -22,6 +23,7 @@ int convert_double_to_int(double num)
 {
     return num;    
 }
+
 /*
 Function static_cast_double_int with a double parameter that does
 a static_cast conversion to int
@@ -29,3 +31,8 @@ a static_cast conversion to int
 @param double num
 @return the static cast conversion to int
 */
+int static_cast_double_int(double num)
+{
+    auto result = static_cast<int>(num);
+    return result;
+}
