@@ -27,3 +27,25 @@ TEST_CASE("Verify the NOT truth table")
 	REQUIRE(get_not_result(true) == false);
 	REQUIRE(get_not_result(false) == true);
 }
+
+TEST_CASE("Verify the boolean logic order of precedence")
+{
+	REQUIRE((!true && true || true) == true);
+	REQUIRE((true || true && !true) == true);
+}
+
+TEST_CASE("Verify the is even function")
+{
+	REQUIRE(is_even(2) == true);
+	REQUIRE(is_even(3) == false);
+	REQUIRE(is_even(999) == false);
+	REQUIRE(is_even(1002) == true);
+}
+
+TEST_CASE("Verify the is odd function")
+{
+	REQUIRE(is_odd(2) == false);
+	REQUIRE(is_odd(3) == true);
+	REQUIRE(is_odd(999) == true);
+	REQUIRE(is_odd(1002) == false);
+}

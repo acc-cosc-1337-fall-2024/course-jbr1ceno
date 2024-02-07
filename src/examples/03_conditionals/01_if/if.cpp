@@ -17,6 +17,18 @@ bool get_not_result(bool bool1)
     return !bool1;
 }
 
+bool is_even(int num)
+{
+    auto remainder = num % 2;
+    return remainder == 0;
+}
+
+bool is_odd(int num)
+{
+    auto remainder = num % 2;
+    return remainder == 1;
+}
+
 //write code for function named overtime that accepts a double hours and returns true if 
 //hours over 40, false otherwise
 
