@@ -49,3 +49,15 @@ TEST_CASE("Verify the is odd function")
 	REQUIRE(is_odd(999) == true);
 	REQUIRE(is_odd(1002) == false);
 }
+
+TEST_CASE("Verify is vowel function")
+{
+	REQUIRE(is_vowel('a') == true);
+	REQUIRE(is_vowel('e') == true);
+	REQUIRE(is_vowel('i') == true);
+	REQUIRE(is_vowel('o') == true);
+	REQUIRE(is_vowel('u') == true);
+
+	REQUIRE(is_vowel('b') == false);
+	REQUIRE(is_vowel('m') == false);
+}

@@ -24,5 +24,9 @@ int main()
 	//display even if number is even
 	cout<<even<<"\n";
 
+	auto odd = is_odd(value);
+	cout<<odd<<"\n";
+
+
 	return 0;
 }
