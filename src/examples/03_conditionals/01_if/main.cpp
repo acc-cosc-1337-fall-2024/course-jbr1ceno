@@ -14,6 +14,10 @@ int main()
 
 	result = is_vowel(ch);
 
+	if(result == true)
+	{
+		cout<<ch<<" is a vowel\n";
+	}
 	cout<<result<<"\n";
 
 	return 0;
