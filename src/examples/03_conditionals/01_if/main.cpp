@@ -18,6 +18,11 @@ int main()
 	{
 		cout<<ch<<" is a vowel\n";
 	}
+	else
+	{
+		cout<<ch<<" is not a vowel\n";
+	}
+
 	cout<<result<<"\n";
 
 	return 0;
