@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "if.h"
+#include "if_else_if.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -60,4 +61,15 @@ TEST_CASE("Verify is vowel function")
 
 	REQUIRE(is_vowel('b') == false);
 	REQUIRE(is_vowel('m') == false);
+}
+
+TEST_CASE("verify the get generation function")
+{
+	REQUIRE(get_generation(2030) == "Invalid Year");
+	REQUIRE(get_generation(2000) == "Centennial");
+	REQUIRE(get_generation(1980) == "Millenial");
+	REQUIRE(get_generation(1970) == "Generation X");
+	REQUIRE(get_generation(1950) == "Baby Boomer");
+	REQUIRE(get_generation(1930) == "Silent Generation");
+	REQUIRE(get_generation(1900) == "Invalid Year");
 }
