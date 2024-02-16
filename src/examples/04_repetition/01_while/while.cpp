@@ -46,3 +46,18 @@ void display(std::string str)
         i = i + 1;
     }
 }
+
+void while_nested()
+{
+    auto i = 0;
+
+    while(i++ < 3)
+    {
+        cout<<"Outer loop - waiting for inner loop\n";
+        auto j = 0;
+        while(j++ < 3)
+        {
+            cout<<"\tInner loop - making outer loop wait\n";
+        }
+    }
+}
