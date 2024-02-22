@@ -75,3 +75,64 @@ void get_table_of_center_diff_x_h(double num_x)
 
     }
 }
+
+void get_table_of_deriv_epsilon(double num_x)
+{
+    double hVar[5] = {pow((double)10.0, (double)-5), pow((double)10.0, (double)-10), pow(10.0, -16.0), pow(10.0, -30.0), pow(10.0, -50.0)};
+    //double t[2] = {pow((double)10.0, (double)-5), pow((double)10.0, (double)-10)};
+    for(int i = 0; i < 5; i++)
+    {
+        cout << "As h approaches: " << hVar[i] << "    "; //h column
+        cout << "forward approximation of f'(1) ≈ " << get_numeric_deriv_right(num_x, hVar[i])<< "      "; //forward diff column
+        cout << "As h approaches: " << hVar[i] << "    "; //h column
+        cout << "backward approximation of f'(1) ≈ " << get_numeric_deriv_left(num_x, hVar[i])<< "          "; // backward approx column
+        cout << "As h approaches: " << hVar[i] << "    "; //h column
+        cout << "center approximation of f'(1) ≈ " << get_numeric_deriv_center(num_x, hVar[i])<< "\n"; // center approx column
+    }
+}
+
+void get_foward_table_diff(double timNum[], double velNum[], int n)
+{
+    //Table 1 Data Velocity as a function of time
+    
+    //double derivArrayForward[6] = {0, 0, 0, 0, 0, 0};
+
+    //get forward diff of table
+    for(int i = 0; i < n - 1; i++)
+    {
+        if(i == n - 1)
+        {
+            double velDiff = velNum[i] - velNum[i - 1];
+            double timDiff = timNum[i] - timNum[i - 1];
+            cout<<velDiff/timDiff;
+        }
+        else
+        {
+            double velDiff = velNum[i + 1] - velNum[i];
+            double timDiff = timNum[i + 1] - timNum[i];
+            cout<<" "<<velDiff/timDiff;
+        }
+    }
+}
+
+void get_backward_table_diff(double timNum[], double velNum[], int n)
+{
+    
+
+    //get backward diff of table
+    for(int i = 0; i < n - 1; i++)
+    {
+        if(i == 0)
+        {
+            double velDiff = velNum[i] - velNum[i - 1];
+            double timDiff = timNum[i] - timNum[i - 1];
+            cout<<velDiff/timDiff;
+        }
+        else
+        {
+            double velDiff = velNum[i] - velNum[i - 1];
+            double timDiff = timNum[i] - timNum[i - 1];
+            cout<<velDiff/timDiff;
+        }
+    }
+}

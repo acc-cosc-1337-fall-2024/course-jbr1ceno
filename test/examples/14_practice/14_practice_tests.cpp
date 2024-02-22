@@ -43,9 +43,3 @@ TEST_CASE("Verify function f' of x works, center diff approx")
 	REQUIRE(get_numeric_deriv_center(1.0, 0.0001) == 5000.0*((1.0/1.0001)-(1.0/0.9999)));
 	REQUIRE(get_numeric_deriv_center(1.0, 0.00000000000001) == -1.0);
 }*/
-
-TEST_CASE("Verify abosulte error of f'(1) with the f'(x) as h --> estimate")
-{
-	
-	
-}
