@@ -13,3 +13,11 @@ TEST_CASE("Test function value parameter") //copy parameter
 
 	REQUIRE(num == 5);
 }
+
+TEST_CASE("Test reference parameter")
+{
+	int num = 5; //local variable
+	reference_params(num); //pass the address where num is stored
+
+	REQUIRE(num == 10);
+}
