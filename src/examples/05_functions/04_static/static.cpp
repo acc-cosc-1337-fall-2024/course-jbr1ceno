@@ -22,3 +22,13 @@ void use_static_variable_1()
     num++;
     cout<<num<<"\n";
 }
+
+double get_gross_pay(int hours, double rate)
+{
+    return hours * rate;
+}
+
+double get_gross_pay(int yearly_salary)
+{
+    return yearly_salary / 12;
+}
