@@ -1,0 +1,1 @@
+double get_gross_p(int hours, double rate = 20.0); //only furthers parameter can be a default parameter

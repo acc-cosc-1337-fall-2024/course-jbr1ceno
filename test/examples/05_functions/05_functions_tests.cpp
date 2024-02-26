@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "val_ref.h"
 #include "static.h"
+#include "default.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -31,4 +32,10 @@ TEST_CASE("Test get gross pay with two parameters")
 TEST_CASE("Test get gross pay w one parameter")
 {
 	REQUIRE(get_gross_pay(12000) == 1000.0);
+}
+
+TEST_CASE("Test function default parameters")
+{
+	REQUIRE(get_gross_p(40) == 800.0);
+	REQUIRE(get_gross_p(40, 10.0) == 400.0);
 }
