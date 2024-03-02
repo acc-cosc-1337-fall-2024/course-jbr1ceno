@@ -8,11 +8,16 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Verify string for range with value")
 {
-
-
-
 	string lang = "C++";
 	display_for_range(lang);
 
 	REQUIRE(lang == "C++");
+}
+
+TEST_CASE("Verify string for range with ref")
+{
+	string lang = "C++";
+	display_for_range_ref(lang);
+
+	REQUIRE(lang == "zzz");
 }
