@@ -38,3 +38,14 @@ void display_for_ref(std::string& str)
         cout<<str[i]<<"\n";
     }
 }
+
+void display_for_range(std::string str)
+{
+    for(auto& ch: str)
+    {
+        cout<<ch<<"\n";
+        ch = 'z';
+    }
+
+    cout<<str<<"\n";
+}
