@@ -1,6 +1,7 @@
+#include "func.h"
 
 int main() 
 {
-
-	return 0;
+	//cout<<to_upper_string("amgmeh ")<<"\n";
+	prompt_user();
 }
