@@ -6,7 +6,7 @@ using std::cout; using std::vector; using std::string;
 
 int main()
 {
-    vector<int> nums {7, 2, 9}; //create and initialize a vector
+    vector<double> nums {7.5, 2.2, 9.5}; //create and initialize a vector
     cout<<nums[1]<<"\n\n";
 
     vector<int> nums1;
