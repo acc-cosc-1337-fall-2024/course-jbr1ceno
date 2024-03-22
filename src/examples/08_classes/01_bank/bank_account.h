@@ -9,6 +9,7 @@ public: //other regions of code, main, test, other function, another class can s
     BankAccount(int b) : balance(b) {/*empty class function/method block */}
 
     int get_balance(){return balance;}
+    void deposit(int amount);
 
 private: //only BankAccount can read/write to the balance directly
     int balance{0}; //initializa the balance to zero on class creation
