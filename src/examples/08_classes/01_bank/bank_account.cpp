@@ -34,6 +34,7 @@ void display_menu()
 {
     cout<<"1-Display balance\n";
     cout<<"2-Deposit\n";
+    cout<<"3-Withdraw\n";
     cout<<"4-Exit\n";
 }
 
@@ -62,9 +63,14 @@ void handle_menu(int choice, BankAccount& account)
         cout<<account.get_balance()<<"\n";
         break;
     case 2:
-        cout<<"Enter Deposit amount ";
+        cout<<"Enter Deposit amount\n";
         cin>>amount;
         account.deposit(amount);
+        break;
+    case 3:
+        cout<<"Enter Withdrw amount\n";
+        cin>>amount;
+        account.withdraw(amount);
         break;
     case 4:
         cout<<"Exiting...\n";
