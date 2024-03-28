@@ -19,7 +19,10 @@ void BankAccount::withdraw(int amount)
     }
 }
 
-
+void BankAccount::get_balance_from_db()
+{
+    balance = rand() % 10000 + 1;
+}
 
 
 

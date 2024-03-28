@@ -1,19 +1,20 @@
 #include "atm.h"
 #include "bank_account.h"
 #include<iostream>
+#include<time.h>
 
 using std::cout;
 
 int main()
 {
+	srand(time(NULL));
 	//assume some other class retrieved the balance from the database
 
-	BankAccount account(500); //create a variable/object
-	ATM atm(account);		//atm object uses account
+	BankAccount account; //create a variable/object
+	cout<<account.get_balance()<<"\n";
 
-	run_menu(atm);			//run atm menu
-
-	cout<<"Balance: "<<account.get_balance()<<"\n";
+	BankAccount account2; //create a variable/object
+	cout<<account2.get_balance()<<"\n";
 
 	return 0;
 }
