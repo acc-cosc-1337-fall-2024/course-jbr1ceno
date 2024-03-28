@@ -15,8 +15,5 @@ int main()
 	BankAccount account(bankDB.retrieve_balance()); //create a variable/object
 	cout<<account.get_balance()<<"\n";
 
-	BankAccount account2; //create a variable/object
-	cout<<account2.get_balance()<<"\n";
-
 	return 0;
 }
