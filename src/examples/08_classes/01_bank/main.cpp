@@ -13,7 +13,7 @@ int main()
 
 	run_menu(atm);			//run atm menu
 
-	//cout<<"Balance: "<<account.get_balance()<<"\n";
+	cout<<"Balance: "<<account.get_balance()<<"\n";
 
 	return 0;
 }

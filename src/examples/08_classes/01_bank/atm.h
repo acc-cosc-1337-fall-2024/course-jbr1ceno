@@ -8,12 +8,12 @@
 class ATM
 {
 public:
-    ATM(BankAccount b) : account(b){/*represents empty code block*/}    //initialize account to the incoming account (b);
+    ATM(BankAccount& b) : account(b){/*represents empty code block*/}    //initialize account to the incoming account (b);
     void display_balance();
     void make_deposit();
     void make_withdraw();
 private:
-    BankAccount account;
+    BankAccount& account;
 };
 
 #endif
