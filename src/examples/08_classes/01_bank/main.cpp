@@ -13,6 +13,10 @@ int main()
 	BankDB bankDB;
 
 	BankAccount account(bankDB.retrieve_balance()); //create a variable/object
+
+	ATM atm(account);
+	run_menu(atm);
+
 	cout<<account.get_balance()<<"\n";
 
 	return 0;
