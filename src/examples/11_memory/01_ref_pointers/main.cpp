@@ -5,23 +5,16 @@ using std::cout;
 
 int main() 
 {
-	int num1 = 5;
-	int& num1_ref = num1;
+	int num1 = 5, num2 = 10;
+	int* num_ptr; //don't have to point to anything
+	num_ptr = &num1; //no asterisk *, meaning not gonna work with value but gonna work with address
+	cout<<"Address of num1: "<<&num1<<"\n";
+	cout<<"Address that num_ptr points to: "<<num_ptr<<"\n"; 	//num_ptr saving address of num1 to its memory block
+	cout<<"Value of the variable num_ptr points to: "<<*num_ptr<<"\n";	//with asterisk * work with values, *num_ptr gors to memory block
 
-	cout<<num1_ref<<"\n";
-	num1_ref = 10;
+	num_ptr = &num2;
+	cout<<*num_ptr<<"\n"; //with asterisk * work with values
 
-	cout<<num1_ref<<"\n";
-
-	cout<<num1<<"\n";
-
-	int num2 = 5; //create variable num2
-	int* num2_ptr = &num2; //&num2 tell the pointer to give me the memory address of num2 and save it to the num2_ptr (pointer)
-	cout<<*num2_ptr<<"\n";
-
-	*num2_ptr = 10; // with *num2_ptr; whatever you're pointing to, I want to work with/change that value
-	cout<<*num2_ptr<<"\n";
-	cout<<num2<<"\n";
 	
 	return 0;
 }
