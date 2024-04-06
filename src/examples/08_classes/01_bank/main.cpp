@@ -11,18 +11,12 @@ using std::cout; using std::vector;
 
 int main()
 {
-	vector<BankAccount> accounts;
+	//Inheritance + pointer + virtual function = Polymorphism. BankAccount will behave as SavingsAccount  at runtime.
+	BankAccount* account_ptr; //you can declare pointer and not point to anything
+	SavingsAccount savings;
+	account_ptr = &savings;
 
-	srand(time(NULL));
-	CheckingAccount checking;//0 balance
-	SavingsAccount savings;//0 balance
-
-	accounts.push_back(checking);
-	accounts.push_back(savings);
-
-	cout<<accounts[0].get_balance()<<"\n";//checking 
-	cout<<accounts[1].get_balance()<<"\n";//savings
-	cout<<savings.get_balance()<<"\n"; //explicitly calling the "get_balance" from SavingsAccount savings
+	cout<<account_ptr->get_balance()<<"\n";
 
 	return 0;
 }
