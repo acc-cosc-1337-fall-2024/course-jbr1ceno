@@ -22,6 +22,7 @@ int main()
 
 	cout<<accounts[0].get_balance()<<"\n";//checking 
 	cout<<accounts[1].get_balance()<<"\n";//savings
+	cout<<savings.get_balance()<<"\n"; //explicitly calling the "get_balance" from SavingsAccount savings
 
 	return 0;
 }

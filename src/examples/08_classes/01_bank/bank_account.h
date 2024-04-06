@@ -12,7 +12,7 @@ public: //other regions of code, main, test, other function, another class can s
     BankAccount(){std::cout<<"BankAccount Default constructor fired: \n";} //constructor with no parameters - default synthesized constructor ON QUIZ & EXAM
     BankAccount(int b) : balance(b) {std::cout<<"BankAccount Constructor with balance parameter fired: \n";}
 
-    int get_balance(){return balance;}
+    int get_balance(){std::cout<<"Bank get balance: "; return balance;}
     void deposit(int amount);
     void withdraw(int amount);
 
