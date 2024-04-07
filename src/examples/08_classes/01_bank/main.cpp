@@ -4,23 +4,22 @@
 #include "checking_account.h"
 #include "savings_account.h"
 #include<iostream>
+#include<memory>
 #include<time.h>
 #include<vector>
 
 using std::cout; using std::vector;
+using std::unique_ptr; using std::make_unique;
 
 int main()
 {	
 	srand(time(NULL));
 	
 	//Inheritance + pointer + virtual function = Polymorphism. BankAccount will behave as SavingsAccount  at runtime.
-	vector<BankAccount*> accounts; //list of pointers of BankAccount types
+	vector<unique_ptr<BankAccount>> accounts; //list of pointers of BankAccount types
 
-	CheckingAccount checking;	//0 balance
-	SavingsAccount savings;		//0 balance
-
-	accounts.push_back(&checking);
-	accounts.push_back(&savings);
+	accounts.push_back(make_unique<CheckingAccount>());
+	accounts.push_back(make_unique<SavingsAccount>());
 
 	cout<<accounts[0]->get_balance()<<"\n";	//checking 
 	cout<<accounts[1]->get_balance()<<"\n";	//savings
