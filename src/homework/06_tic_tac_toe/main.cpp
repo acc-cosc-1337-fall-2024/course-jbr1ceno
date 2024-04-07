@@ -26,6 +26,18 @@ int main()
 			cin>>position;
 			game.mark_board(position);
 			game.display_board();
+			if(game.game_over() == true)
+			{
+				if(game.get_winner() != "C")
+				{
+					cout<<"The winner of the game is: "<<game.get_winner()<<"\n";
+				}
+				else
+				{
+					cout<<"There is no winner.\n";
+				}
+			}
+			
 		}
 
 		cout<<"Play again, enter y or Y? ";
