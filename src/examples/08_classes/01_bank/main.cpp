@@ -1,8 +1,6 @@
 #include "atm.h"
-#include "bank_DB.h"
-#include "bank_account.h"
-#include "checking_account.h"
-#include "savings_account.h"
+#include "customer.h"
+
 #include<iostream>
 #include<memory>
 #include<time.h>
@@ -16,13 +14,16 @@ int main()
 	srand(time(NULL));
 	
 	//Inheritance + pointer + virtual function = Polymorphism. BankAccount will behave as SavingsAccount  at runtime.
-	vector<unique_ptr<BankAccount>> accounts; //list of pointers of BankAccount types
+	vector<Customer> customers;
+	customers.push_back(Customer(1, "John Doe"));
+	customers.push_back(Customer(2, "Mary Doe"));
+	customers.push_back(Customer(3, "John Hancock"));
+	customers.push_back(Customer(4, "Mary Hancock"));
+	customers.push_back(Customer(5, "Bjarne Stroustrup"));
 
-	accounts.push_back(make_unique<CheckingAccount>());
-	accounts.push_back(make_unique<SavingsAccount>());
+	ATM atm(customers);
 
-	cout<<accounts[0]->get_balance()<<"\n";	//checking 
-	cout<<accounts[1]->get_balance()<<"\n";	//savings
+	run_menu(atm);
 
 	return 0;
 }

@@ -5,25 +5,41 @@ using std::cout; using std::cin;
 
 void ATM::display_balance()
 {
-    cout<<"Balance: "<<account.get_balance();
+    auto& customer = customers[customer_index];
+
+    auto& account = customer.get_account(account_index);
+    cout<<"Balance: "<<account->get_balance();
 }
 
 void ATM::make_deposit()
 {
+    auto& customer = customers[customer_index];
     auto amount = 0;
     cout<<"Enter deposit amount: ";
     cin>>amount;
-    account.deposit(amount);
+
+    auto& account = customer.get_account(account_index);
+    account->deposit(amount);
 }
 
 void ATM::make_withdraw()
 {
+    auto& customer = customers[customer_index];
     auto amount = 0;
     cout<<"Enter withdraw amount: ";
     cin>>(amount);
-    account.withdraw(amount);
+
+    auto& account = customer.get_account(account_index);
+    account->withdraw(amount);
 }
 
+void ATM::scan_card()
+{
+    customer_index = rand() % customers.size();
+    cout<<"Enter 1 for Checking 2 for Savings: ";
+    cin>>account_index;
+    account_index -= 1;
+}
 
 //End of code block of functions that belong to the ATM class
 
@@ -42,12 +58,16 @@ void run_menu(ATM& atm)
 
     do
     {
-        display_menu();
-        cout<<"Enter option\n";
-        cin>>menu_choice;
-        handle_menu(menu_choice, atm);
+        atm.scan_card();
+        do
+        {
+            display_menu();
+            cout<<"Enter option\n";
+            cin>>menu_choice;
+            handle_menu(menu_choice, atm);
 
-    } while (menu_choice != 4);
+        } while (menu_choice != 4);
+    }while(true);
     
 }
 
