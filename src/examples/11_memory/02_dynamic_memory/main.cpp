@@ -4,7 +4,7 @@ using std::cout;
 
 int main() 
 {
-	use_unique_ptr();
+	use_shared_ptr();
 	
 	return 0;
 }
