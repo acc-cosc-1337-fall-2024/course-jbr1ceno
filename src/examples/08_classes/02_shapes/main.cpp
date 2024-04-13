@@ -13,15 +13,15 @@ iterate with auto
 
 int main() 
 {
-	Shape* s; //pointer to a Shape type that includes Circle and Line
+	std::vector<std::unique_ptr<Shape>> shapes;
 
-	Circle c; //stack variable (created in the stack)
-	s = &c;
-	s->draw();
+	shapes.push_back(std::make_unique<Circle>());
+	shapes.push_back(std::make_unique<Line>());
 
-	Line l;	//stack variable (created in the stack)
-	s = &l;
-	s->draw();
+	for(auto& shape: shapes)
+	{
+		shape->draw();
+	}
 
 	return 0;
 }
