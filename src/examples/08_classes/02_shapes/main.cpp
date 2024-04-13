@@ -13,6 +13,14 @@ iterate with auto
 
 int main() 
 {
+	Shape s;
+	s.draw();
+
+	Circle c;
+	c.draw();
+
+	Line l;
+	l.draw();
 
 	return 0;
 }
