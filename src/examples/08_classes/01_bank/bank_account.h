@@ -15,8 +15,10 @@ public: //other regions of code, main, test, other function, another class can s
     void deposit(int amount);
     void withdraw(int amount);
 
-private: //only BankAccount can read/write to the balance directly
+protected:
     int balance{0}; //initializa the balance to zero on class creation
+
+private: //only BankAccount can read/write to the balance directly
 };
 
 #endif
