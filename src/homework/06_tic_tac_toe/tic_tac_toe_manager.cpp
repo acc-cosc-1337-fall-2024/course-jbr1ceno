@@ -8,11 +8,10 @@ using std::cout;
 //public functions
 
 
-void TicTacToeManager::save_game(TicTacToe b)
+void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& b)
 {
-    games.push_back(b);
-    update_winner_count(b.get_winner());
-    
+    update_winner_count(b->get_winner());
+    games.push_back(std::move(b)); //?????? WHY THE SEGMENTATION FAULT (core dump)?????
 }
 
 void TicTacToeManager::get_winner_total(int& o, int& w, int& t)
@@ -22,6 +21,13 @@ void TicTacToeManager::get_winner_total(int& o, int& w, int& t)
     t = ties;
 }
 
+void TicTacToeManager::display_games()
+{
+    for(auto& game : games)
+    {
+        (*game).display_board();
+    }
+}
 
 //private functions
 

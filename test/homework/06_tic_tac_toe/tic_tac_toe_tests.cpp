@@ -197,7 +197,7 @@ TEST_CASE("Test win diagonally from bottom left")
 	game.display_board();
 	REQUIRE(game.game_over() == true);
 	std::cout<<"The winner of this round is: "<<game.get_winner()<<"\n\n";
-} */
+} 
 
 TEST_CASE("Test get win from X")
 {
@@ -287,4 +287,4 @@ TEST_CASE("Test win from T")
 	REQUIRE(xWins == 0);
 	REQUIRE(oWins == 0);
 	REQUIRE(tWins == 1);
-}
+} */
