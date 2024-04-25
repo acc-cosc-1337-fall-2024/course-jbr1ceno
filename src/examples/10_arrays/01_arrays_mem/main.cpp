@@ -2,8 +2,8 @@
 
 int main() 
 {
-
-	use_stack_array();
+	arrays_and_pointers();
+	
 	return 0;
 
 }
