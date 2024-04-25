@@ -2,10 +2,9 @@
 
 int main() 
 {
-	const auto SIZE = 3;
-    int nums[SIZE] {5, 7, 0}; //stack array list
+	int times_table[ROWS][COLS];//create empty array
 
-	display_array(nums, SIZE);
+	populate_times_table(times_table, ROWS);
 
 	return 0;
 }

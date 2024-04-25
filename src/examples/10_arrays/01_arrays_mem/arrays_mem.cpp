@@ -24,11 +24,21 @@ void arrays_and_pointers()
     *ptr--;
     cout<<ptr<<" "<<*ptr<<"\n";
 }
-
 void display_array(int* nums, const int SIZE)
 {
     for(auto i=0; i < SIZE; i++)
     {
         cout<<nums[i]<<"\n";
+    }
+}
+
+void populate_times_table(int times_table[][COLS], const int ROWS)
+{
+    for(auto i=0; i < ROWS; i++)
+    {
+        for(auto j=0; j < COLS; j++)
+        {
+            times_table[i][j] = (i + 1) * (j + 1);
+        }
     }
 }
