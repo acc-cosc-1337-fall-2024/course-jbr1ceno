@@ -62,17 +62,22 @@ int main()
 				if(game->get_winner() != "C")
 				{
 					cout<<"The winner of the game is: "<<game->get_winner()<<"\n";
-					gameManager.save_game(game);
+					//gameManager.save_game(game);
 				}
 				else
 				{
 					cout<<"There is no winner.\n";
-					gameManager.save_game(game);
+					//gameManager.save_game(game);
 				}
 			}
-			gameManager.get_winner_total(oWins, xWins, ties);
+
+			//gameManager.save_game(game);								//std::move is sed therefore game variable cant be used bc it doesn't point to anything anymore
+			//gameManager.get_winner_total(oWins, xWins, ties);
 			
 		}
+		
+		gameManager.save_game(game);						
+		gameManager.get_winner_total(oWins, xWins, ties);
 
 		cout<<"Play again, enter y or Y? ";
 		cin>>user_choice;

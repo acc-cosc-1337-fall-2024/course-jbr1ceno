@@ -2,8 +2,11 @@
 #include "catch.hpp"
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
+#include<memory>
 
-using std::cout;
+using std::cout; using std::make_unique;
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -288,3 +291,66 @@ TEST_CASE("Test win from T")
 	REQUIRE(oWins == 0);
 	REQUIRE(tWins == 1);
 } */
+
+
+//TicTacToe3 Test
+
+TEST_CASE("Test get win from X with TicTacToe3")
+{
+	std::unique_ptr<TicTacToe> game;
+	game = make_unique<TicTacToe3>();
+	TicTacToeManager managerGames;
+	game->start_game("X");
+	game->mark_board(7);
+	game->mark_board(1);
+	game->mark_board(8);
+	game->mark_board(2);
+	game->mark_board(9);
+	game->mark_board(5);
+	game->mark_board(3);
+	game->mark_board(6);
+	game->mark_board(4);
+
+	int xWins;
+	int oWins;
+	int tWins;
+
+	game->display_board();
+	managerGames.save_game(game);
+	managerGames.get_winner_total(oWins, xWins, tWins);
+	cout<<"\nX has won: "<<xWins;
+	cout<<"\nO has won: "<<oWins;
+	cout<<"\nT has won: "<<tWins<<"\n";
+	REQUIRE(xWins == 1);
+	REQUIRE(oWins == 0);
+	REQUIRE(tWins == 0);
+}
+
+TEST_CASE("Test get win from X with TicTacToe4")
+{
+	std::unique_ptr<TicTacToe> game;
+	game = make_unique<TicTacToe4>();
+	TicTacToeManager managerGames;
+	game->start_game("X");
+	game->mark_board(1);
+	game->mark_board(2);
+	game->mark_board(5);
+	game->mark_board(3);
+	game->mark_board(9);
+	game->mark_board(4);
+	game->mark_board(13);
+
+	int xWins;
+	int oWins;
+	int tWins;
+
+	game->display_board();
+	managerGames.save_game(game);
+	managerGames.get_winner_total(oWins, xWins, tWins);
+	cout<<"\nX has won: "<<xWins;
+	cout<<"\nO has won: "<<oWins;
+	cout<<"\nT has won: "<<tWins<<"\n";
+	REQUIRE(xWins == 1);
+	REQUIRE(oWins == 0);
+	REQUIRE(tWins == 0);
+}
