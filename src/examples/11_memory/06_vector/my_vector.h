@@ -10,6 +10,8 @@ public:
     Vector(int size); //constructor
     int Size(){return size;}
     int Capacity(){return capacity;}
+    int& operator[](int index){return elements[index];}         //this is to read
+    int& operator[](int index)const{return elements[index];}    //this is to write
     ~Vector();        //destructor
 private:
     int size{0}; //keep track of the current index and the number of elements in the list
