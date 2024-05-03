@@ -21,7 +21,7 @@ TEST_CASE("Test pointer parameter")
 	pointer_parameter(&num);
 
 	REQUIRE(num == 30);
-}*/
+}
 
 TEST_CASE("Test vector initial size")
 {
@@ -35,4 +35,15 @@ TEST_CASE("Test vector capacity value")
 	Vector v(3);
 
 	REQUIRE(v.Capacity() == 3);
+}*/
+
+TEST_CASE("Test my vector creation from existing vector")
+{
+	Vector v1(3);
+	v1[0] = 5;
+
+	Vector v2 = v1;	//user-defined class
+	v2[0] = 10;
+
+	REQUIRE(v1[0] == 5);
 }
