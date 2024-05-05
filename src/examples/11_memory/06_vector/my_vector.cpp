@@ -26,6 +26,37 @@ Vector::Vector(const Vector& v1)
     }
 }
 
+/*
+    1 - Create temporary memory for v2
+    2 - Copy values from v1 into v2 temporary memory
+    3 - Delete v2 elements memory
+    4 - Point v2 elements to temporary memory
+    5 - Set v2 size to v1.size
+    6 - Return a reference to vector using (this)
+*/
+
+Vector& Vector::operator=(const Vector& v1)
+{
+    int* temp = new int[v1.size];
+
+    for(auto i = 0; i < v1.size; i++)
+    {
+        temp[i] = v1.elements[i];
+    }
+
+    cout<<"Deallocate memory Copy Assignment "<<elements<<"\n";
+    delete[] elements;
+
+    elements = temp;
+    temp = nullptr;
+
+    cout<<"Memory allocation at "<<elements<<"\n";
+
+    size = v1.size;
+
+    return *this;
+}
+
 Vector::~Vector()
 {
     cout<<"Deallocate memory at: "<<elements<<"\n";
