@@ -46,7 +46,7 @@ TEST_CASE("Test my vector creation from existing vector")
 	v2[0] = 10;
 
 	REQUIRE(v1[0] == 5);
-}*/
+}
 
 TEST_CASE("Test my vector creation-overwrite an existing Vector variable")
 {
@@ -54,4 +54,10 @@ TEST_CASE("Test my vector creation-overwrite an existing Vector variable")
 	Vector v2(3);
 
 	v2 = v1;
+}*/
+
+TEST_CASE("Test my vector with std::move function")
+{
+	Vector v1(3);
+	Vector v2 = std::move(v1);
 }

@@ -10,6 +10,7 @@ public:
     Vector(int size); //Constructor Rule 1 of 3 Legacy C++
     Vector(const Vector& v1);  //Copy Constructor 2 of 3 Legacy C++ 
     Vector& operator=(const Vector& v1);
+    Vector(Vector&& v1); //move constructor
     int Size(){return size;}
     int Capacity(){return capacity;}
     int& operator[](int index){return elements[index];}         //this is to read
